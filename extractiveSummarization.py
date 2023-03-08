@@ -5,7 +5,6 @@ import networkx as nx
 import fasttext
 import fasttext.util
 import re
-import string
 
 ft = fasttext.load_model('cc.hi.300.bin')
 
