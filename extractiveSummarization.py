@@ -7,8 +7,10 @@ import fasttext.util
 import re
 import string
 
+ft = fasttext.load_model('cc.hi.300.bin')
+
 def create_sim_mat(sentences):
-    ft = fasttext.load_model('cc.hi.300.bin')
+    
     sim_mat = np.zeros([len(sentences), len(sentences)])
     for i in range(len(sentences)):
         for j in range(len(sentences)):

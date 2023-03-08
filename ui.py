@@ -3,8 +3,6 @@ import streamlit as st
 import requests
 import json
 
-# st.set_page_config(page_title='My Streamlit App', page_icon=':chart_with_upwards_trend:', layout='wide', page_color='#1a1a1a')
-
 
 def generate_extractive_summary(input_text):
     # Code to generate extractive summary
@@ -42,7 +40,7 @@ def generate_abstractive_summary(input_text):
 
 # Define UI Elements
 st.title("Hindi Text Summarization(NLP)")
-input_text = st.text_input("Enter text to summarize : ")
+input_text = st.text_area("Enter text to summarize : ")
 output_text = st.empty()
 summary_type = st.selectbox("Choose Summary Type : ", ["Extractive Summary", "Abstractive Summary"])
 # copy_button = st.button("Copy Summary to Clipboard")
@@ -57,10 +55,7 @@ if st.button("Generate Summary"):
     else:
         summary = "Invalid summary type selected"
 
-    # Display Summary
-    output_text.text(summary)
-
 # Display output text box
 if summary:
     st.subheader("Summary:")
-    st.text(summary)
+    st.write(summary)
